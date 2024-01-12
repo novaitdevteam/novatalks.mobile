@@ -1,0 +1,91 @@
+{
+  "name": "novatalks-ui-lite",
+  "version": "0.0.1",
+  "description": "novatalks",
+  "productName": "novatalks-ui-lite",
+  "author": "vladimir.buchatskyi <vladimirbuchatskiy@gmail.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue ./",
+    "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "dev:spa": "quasar dev -m spa",
+    "dev:android": "quasar dev -m capacitor -T android --ide",
+    "dev:ios": "quasar dev -m capacitor -T ios",
+    "dev:pwa": "quasar dev -m pwa",
+    "dev:storybook": "storybook dev -p 6006",
+    "build:spa": "quasar build -m spa",
+    "build:android": "quasar build -m capacitor -T android --ide",
+    "build:ios": "quasar build -m capacitor -T ios",
+    "build:pwa": "quasar build -m pwa -d",
+    "build:storybook": "storybook build",
+    "icongenie:pwa": "icongenie generate -p icongenie-pwa.json",
+    "icongenie:android": "icongenie generate -p icongenie-android.json"
+  },
+  "dependencies": {
+    "@quasar/cli": "^2.3.0",
+    "@quasar/extras": "^1.16.4",
+    "@vee-validate/yup": "^4.11.6",
+    "axios": "^1.2.1",
+    "dayjs": "^1.11.10",
+    "firebase": "^10.4.0",
+    "pinia": "^2.0.11",
+    "quasar": "^2.6.0",
+    "vee-validate": "^4.11.6",
+    "vue": "^3.0.0",
+    "vue-i18n": "^9.0.0",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@intlify/vite-plugin-vue-i18n": "^3.3.1",
+    "@intlify/vue-i18n-loader": "^4.2.0",
+    "@quasar/app-vite": "^1.3.0",
+    "@quasar/icongenie": "^3.1.1",
+    "@storybook/addon-essentials": "^7.5.0-alpha.1",
+    "@storybook/addon-interactions": "^7.5.0-alpha.1",
+    "@storybook/addon-links": "^7.5.0-alpha.1",
+    "@storybook/addon-mdx-gfm": "^7.5.0-alpha.1",
+    "@storybook/blocks": "^7.5.0-alpha.1",
+    "@storybook/testing-library": "^0.2.1-next.0",
+    "@storybook/vue3": "^7.5.0-alpha.1",
+    "@storybook/vue3-vite": "^7.5.0-alpha.1",
+    "autoprefixer": "^10.4.2",
+    "change-case": "^4.1.2",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "eslint-plugin-vue": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "postcss": "^8.4.14",
+    "prettier": "^2.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.5.0-alpha.1",
+    "vite": "^2.9.16",
+    "workbox-build": "^7.0.0",
+    "workbox-cacheable-response": "^7.0.0",
+    "workbox-core": "^7.0.0",
+    "workbox-expiration": "^7.0.0",
+    "workbox-precaching": "^7.0.0",
+    "workbox-routing": "^7.0.0",
+    "workbox-strategies": "^7.0.0"
+  },
+  "lint-staged": {
+    "**/*.{js,vue}": [
+      "npm run lint",
+      "npm run format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint && format"
+    }
+  },
+  "engines": {
+    "node": "^18 || ^16 || ^14.19",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
